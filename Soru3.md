@@ -1,5 +1,4 @@
-## Soru 3) "sample.pageview": tablosunda 1 gün içerisinde trendyol.com a gelen tüm ziyaretlerin logu var. Bu çalışmada 
-## çıkarmak istediğimiz bilgi, günün her bir dakikası için aktif kullanıcı sayısının hesaplanması.
+## Soru 3) "sample.pageview": tablosunda 1 gün içerisinde trendyol.com a gelen tüm ziyaretlerin logu var. Bu çalışmada çıkarmak istediğimiz bilgi, günün her bir dakikası için aktif kullanıcı sayısının hesaplanması.
 
 ```SQL
 -- Burada hll_count fonksiyonu ile tablodan dakika bazlı device_id sayıldı. 
@@ -16,7 +15,7 @@ GROUP BY
 ORDER BY
   1
   
---Burada ise sorguyla dakika başuı aktif kullanıcı sayısı hesaplandı.
+--Burada ise sorguyla dakika başı aktif kullanıcı sayısı hesaplandı.
 SELECT
   view_minute,
   SUM(approx_dist_user) OVER (ROWS BETWEEN 4 PRECEDING AND CURRENT ROW) AS total_active_users
